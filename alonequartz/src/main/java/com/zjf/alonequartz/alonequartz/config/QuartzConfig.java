@@ -28,21 +28,21 @@ public class QuartzConfig {
 //                .build();
 //    }
 
-    @Bean
-    public JobDetail testQuartz2() {
-        return JobBuilder.newJob(TestTask2.class).withIdentity("testTask2").storeDurably().build();
-    }
-
-    @Bean
-    public Trigger testQuartzTrigger2() {
-
-        CronScheduleBuilder cronScheduleBuilder = CronScheduleBuilder.cronSchedule("0 41 14 * * ?");
-        //cron方式，每隔5秒执行一次
-        return TriggerBuilder.newTrigger().forJob(testQuartz2())
-                .withIdentity("testTask2")
-                .withSchedule(cronScheduleBuilder)
-                .build();
-    }
+//    @Bean
+//    public JobDetail testQuartz2() {
+//        return JobBuilder.newJob(TestTask2.class).withIdentity("testTask2").storeDurably().build();
+//    }
+//
+//    @Bean
+//    public Trigger testQuartzTrigger2() {
+//
+//        CronScheduleBuilder cronScheduleBuilder = CronScheduleBuilder.cronSchedule("0/10 * * * * ?");
+//        //cron方式，每隔5秒执行一次
+//        return TriggerBuilder.newTrigger().forJob(testQuartz2())
+//                .withIdentity("testTask3")
+//                .withSchedule(cronScheduleBuilder)
+//                .build();
+//    }
 
 
 }
